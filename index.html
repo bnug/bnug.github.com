@@ -6,7 +6,7 @@
   $(document).ready(function(){
     $("button").click(function(){
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
-        var json_pretty = JSON.stringify(data);
+        var json_pretty = JSON.stringify(data, null, 4);
         $("#hola").text(json_pretty);
         alert("Data: " + json_pretty + "\nStatus: " + status);        
       });    
