@@ -20,7 +20,7 @@
 				if (res.error) {
 					body.innerHTML = "ERROR: " + res.error.message;
 				}
-				body.innerHTML = "The VIN's style is " + res.styles[0].name + " <br/>---OR---<br/> " + res.styles[1].name;
+				body.innerHTML = "The VIN's style is:<br/><br/>" + res.styles[0].name + " <br/>---OR---<br/> " + res.styles[1].name;
 			}
 			// Oops, Houston we have a problem!
 			function fail(data) {
