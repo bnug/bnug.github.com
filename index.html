@@ -6,18 +6,18 @@
   $(document).ready(function(){
     $("button").click(function(){
       var my_vin = $("#myinput").val();
-      alert(my_vin);
+      //alert(my_vin);
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
         var json_pretty = JSON.stringify(data, null, 4);
         $("#hola").text(json_pretty);
-        alert("Data: " + json_pretty + "\nStatus: " + status);        
+        //alert("Data: " + json_pretty + "\nStatus: " + status);        
       });    
     });
   });
   </script>
 </head> 
 <body>
-  <h1>Quick VIN Data checker!</h1>
+  <h1>Quick VIN Data lookup!</h1>
   <button>Run VIN</button><input size="40" id="myinput" type="text" value="KM8SR4HFXEU075654">
   <br/><textarea id='hola' rows="120" cols="120"></textarea>
 </body>
