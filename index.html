@@ -9,8 +9,9 @@
       //alert(my_vin);
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/"+my_vin+"?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
         var json_pretty = JSON.stringify(data, null, 4);
-        $("#hola").text(json_pretty);
-        alert("Options:"+JSON.stringify(data.options, null, 4));
+        var my_options = JSON.stringify(data.options, null, 4);
+        $("#hola").text(my_options + "\n\n" + json_pretty);
+        //alert("Options:"+JSON.stringify(data.options, null, 4));
         //alert("Data: " + json_pretty + "\nStatus: " + status);        
       });    
     });
@@ -18,7 +19,7 @@
   </script>
 </head> 
 <body>
-  <h1>Quick VIN Data lookup!</h1>
+  <h1>Quick VIN Options lookup!</h1>
   <button id="gen_vin">Run VIN</button><input size="40" id="myinput" type="text" value="KM8SR4HFXEU075654">
   <br/><textarea id='hola' rows="50" cols="110"></textarea>
 </body>
