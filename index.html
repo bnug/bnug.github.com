@@ -6,7 +6,8 @@
   $(document).ready(function(){
     $("button").click(function(){
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
-        alert("Data: " + data.squishVin + "\nStatus: " + status);        
+        var json_pretty = JSON.stringify(data);
+        alert("Data: " + json_pretty + "\nStatus: " + status);        
       });    
     });
   });
@@ -14,6 +15,6 @@
 </head> 
 <body>
   <h1>Welcome!</h1>
-  <button>what up</button>
+  <button>what up</button><input id="myinput" type="text">KM8SR4HFXEU075654<input>
 </body>
 </html>
