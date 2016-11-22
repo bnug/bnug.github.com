@@ -4,7 +4,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>
   $(document).ready(function(){
-    $("button").click(function(){
+    $("#gen_vin").click(function(){
       var my_vin = $("#myinput").val();
       //alert(my_vin);
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/"+my_vin+"?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
@@ -18,7 +18,7 @@
 </head> 
 <body>
   <h1>Quick VIN Data lookup!</h1>
-  <button>Run VIN</button><input size="40" id="myinput" type="text" value="KM8SR4HFXEU075654">
+  <button id="gen_vin">Run VIN</button><input size="40" id="myinput" type="text" value="KM8SR4HFXEU075654">
   <br/><textarea id='hola' rows="50" cols="110"></textarea>
 </body>
 </html>
