@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+      $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
+        alert("Data: " + data + "\nStatus: " + status);        
+      });    
+    });
+  });</script>
+</head> 
+<body>
+
+
+
+</body>
+</html>
