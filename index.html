@@ -5,6 +5,8 @@
   <script>
   $(document).ready(function(){
     $("button").click(function(){
+      var my_vin = $("#myinput").value();
+      alert(my_vin);
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
         var json_pretty = JSON.stringify(data, null, 4);
         $("#hola").text(json_pretty);
@@ -16,7 +18,7 @@
 </head> 
 <body>
   <h1>Welcome!</h1>
-  <button>what up</button><input id="myinput" type="text" value="KM8SR4HFXEU075654">
+  <button>Run VIN</button><input id="myinput" type="text" value="KM8SR4HFXEU075654">
   <br/><textarea id='hola' rows="60" cols="40"></textarea>
 </body>
 </html>
