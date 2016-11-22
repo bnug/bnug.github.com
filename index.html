@@ -1,45 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8" />
-	<title>Get VIN Configurator by VIN</title>
-</head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("button").click(function(){
+      $.get("https://api.edmunds.com/api/vehicle/v2/vins/KM8SR4HFXEU075654?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
+        alert("Data: " + data.squishVin + "\nStatus: " + status);        
+      });    
+    });
+  });
+  </script>
+</head> 
 <body>
-	<div id="results-body"></div> 
-	<script>
-	  	window.sdkAsyncInit = function() {
-	    	// Instantiate the SDK
-			var res = new EDMUNDSAPI('sm44adg84m3zh8ysg7ybnc8r');
-			// Optional parameters
-			var options = {
-				"year": 2014
-			};
-			// Callback function to be called when the API response is returned
-			function success(res) {
-				var body = document.getElementById('results-body');
-				if (res.error) {
-					body.innerHTML = "ERROR: " + res.error.message;
-				}
-				body.innerHTML = "The VIN's style is:<br/><br/>" + res.styles[0].name + " <br/>---OR---<br/> " + res.styles[1].name;
-			}
-			// Oops, Houston we have a problem!
-			function fail(data) {
-				console.log(data);
-			}
-			// Fire the API call
-			//res.api('/api/v1/vehicle/vin/WAUKEAFM1DA032804/configuration', options, success, fail);
-			res.api('/api/v1/vehicle/vin/KM8SR4HFXEU075654/configuration', options, success, fail);
-			//res.api('/api/vehicle/v2/vins/KM8SR4HFXEU075654', options, success, fail);
-		    // Additional initialization code such as adding Event Listeners goes here
-	  };
-	  // Load the SDK asynchronously
-	  (function(d, s, id){
-	     	var js, sdkjs = d.getElementsByTagName(s)[0];
-	     	if (d.getElementById(id)) {return;}
-	     	js = d.createElement(s); js.id = id;
-	     	js.src = "myjs.js";
-	     	sdkjs.parentNode.insertBefore(js, sdkjs);
-	   }(document, 'script', 'edmunds-jssdk'));
-	</script>
+  <h1>Welcome!</h1>
+  <button>what up</button>
 </body>
 </html>
