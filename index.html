@@ -10,6 +10,7 @@
       $.get("https://api.edmunds.com/api/vehicle/v2/vins/"+my_vin+"?fmt=json&api_key=sm44adg84m3zh8ysg7ybnc8r", function(data, status){            
         var json_pretty = JSON.stringify(data, null, 4);
         $("#hola").text(json_pretty);
+        alert("Options:"+JSON.stringify(data.options, null, 4));
         //alert("Data: " + json_pretty + "\nStatus: " + status);        
       });    
     });
